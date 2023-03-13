@@ -1,6 +1,6 @@
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
-const MainTitle = () => {
+function MainTitle() {
     return (
         <div className="flex h-1/6 flex-col items-center justify-between text-center">
             <h1 className="font-mono text-5xl font-bold">Harry O'Malley</h1>
@@ -15,6 +15,6 @@ const MainTitle = () => {
             </div>
         </div>
     );
-};
+}
 
 export default MainTitle;
