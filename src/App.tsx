@@ -10,7 +10,7 @@ import SectionButton, { Arrow } from './components/SectionButton';
 function App() {
     return (
         <>
-            <div className="scrollbar h-screen snap-y snap-proximity overflow-y-scroll scroll-smooth">
+            <div className="hidden-scrollbar h-screen snap-y snap-proximity overflow-y-scroll scroll-smooth">
                 <section
                     id="title"
                     className="flex h-screen snap-start flex-col items-center justify-between bg-gray-100"

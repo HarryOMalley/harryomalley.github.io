@@ -4,11 +4,19 @@
 
 /* Hide scrollbars */
 @layer utilities {
-    .scrollbar::-webkit-scrollbar {
+    .hidden-scrollbar::-webkit-scrollbar {
         display: none;
     }
-    .scrollbar {
+    .hidden-scrollbar {
         -ms-overflow-style: none; /* IE and Edge */
         scrollbar-width: none; /* Firefox */
+    }
+    .transparent-scrollbar::-webkit-scrollbar {
+        background: transparent;
+    }
+    .transparent-scrollbar::-webkit-scrollbar-thumb {
+        background: white;
+        border-radius: 10px;
+        border: 1px solid rgba(120, 120, 120, 0.3);
     }
 }
