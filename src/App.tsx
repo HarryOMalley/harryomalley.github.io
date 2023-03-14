@@ -5,69 +5,48 @@ import Projects from './components/Projects';
 import About from './components/About';
 import Contact from './components/Contact';
 import { FaArrowDown, FaArrowUp } from 'react-icons/fa';
+import SectionButton, { Arrow } from './components/SectionButton';
 
 function App() {
     return (
-        <div className="h-screen w-screen snap-y snap-proximity overflow-scroll scroll-smooth">
-            <section
-                id="title"
-                className="flex h-screen w-screen snap-start flex-col items-center justify-between bg-gray-100"
-            >
-                <Navbar />
-                <MainTitle />
-                <div className="m-3 h-5 items-center text-center">
-                    <a href="#about">
-                        <FaArrowDown />
-                    </a>
-                </div>
-            </section>
-            <section
-                id="about"
-                className="flex h-screen w-screen snap-start flex-col items-center justify-between bg-gray-100"
-            >
-                <div className="m-3 h-5 items-center text-center">
-                    <a href="#title">
-                        <FaArrowUp />
-                    </a>
-                </div>
-                <About />
-                <div className="m-3 h-5 items-center text-center">
-                    <a href="#projects">
-                        <FaArrowDown />
-                    </a>
-                </div>
-            </section>
-            <section
-                id="projects"
-                className="flex h-screen max-h-screen w-screen snap-start flex-col items-center justify-between overflow-hidden bg-gray-200"
-            >
-                <div className="m-3 h-5 items-center text-center">
-                    <a href="#about">
-                        <FaArrowUp />
-                    </a>
-                </div>
-                <div className="h-5/6 w-screen">
-                    <Projects />
-                </div>
-                <div className="m-3 h-5 items-center text-center">
-                    <a href="#contact">
-                        <FaArrowDown />
-                    </a>
-                </div>
-            </section>
-            <section
-                id="contact"
-                className="flex h-screen w-screen snap-start flex-col items-center justify-between bg-gray-100"
-            >
-                <div className="m-3 h-5 items-center text-center">
-                    <a href="#projects">
-                        <FaArrowUp />
-                    </a>
-                </div>
-                <Contact />
-                <Footer />
-            </section>
-        </div>
+        <>
+            <div className="scrollbar h-screen snap-y snap-proximity overflow-y-scroll scroll-smooth">
+                <section
+                    id="title"
+                    className="flex h-screen snap-start flex-col items-center justify-between bg-gray-100"
+                >
+                    <Navbar />
+                    <MainTitle />
+                    <SectionButton direction={Arrow.down} to="#about" />
+                </section>
+                <section
+                    id="about"
+                    className="flex h-screen w-full snap-start flex-col items-center justify-between bg-gray-200"
+                >
+                    <SectionButton direction={Arrow.up} to="#title" />
+                    <About />
+                    <SectionButton direction={Arrow.down} to="#projects" />
+                </section>
+                <section
+                    id="projects"
+                    className="flex h-screen max-h-screen snap-start flex-col items-center justify-between overflow-hidden bg-gray-100"
+                >
+                    <SectionButton direction={Arrow.up} to="#about" />
+                    <div className="h-5/6">
+                        <Projects />
+                    </div>
+                    <SectionButton direction={Arrow.down} to="#contact" />
+                </section>
+                <section
+                    id="contact"
+                    className="flex h-screen snap-start flex-col items-center justify-between bg-gray-200"
+                >
+                    <SectionButton direction={Arrow.up} to="#projects" />
+                    <Contact />
+                    <Footer />
+                </section>
+            </div>
+        </>
     );
 }
 
