@@ -9,19 +9,20 @@ import SectionButton, { Arrow } from './components/SectionButton';
 
 function App() {
     return (
-        <>
-            <div className="hidden-scrollbar h-screen snap-y snap-proximity overflow-y-scroll scroll-smooth">
+        <div className="h-screen">
+            <Navbar />
+            <div className="hidden-scrollbar relative top-16 h-[calc(100vh-4rem)] snap-y snap-proximity overflow-y-scroll scroll-smooth">
                 <section
                     id="title"
-                    className="flex h-screen snap-start flex-col items-center justify-between bg-gray-100"
+                    className="flex h-full snap-start flex-col items-center justify-between bg-gray-100"
                 >
-                    <Navbar />
+                    <div></div>
                     <MainTitle />
                     <SectionButton direction={Arrow.down} to="#about" />
                 </section>
                 <section
                     id="about"
-                    className="flex h-screen w-full snap-start flex-col items-center justify-between bg-gray-200"
+                    className="flex h-full w-full snap-start flex-col items-center justify-between bg-gray-200"
                 >
                     <SectionButton direction={Arrow.up} to="#title" />
                     <About />
@@ -29,7 +30,7 @@ function App() {
                 </section>
                 <section
                     id="projects"
-                    className="flex h-screen max-h-screen snap-start flex-col items-center justify-between overflow-hidden bg-gray-100"
+                    className="flex h-full snap-start flex-col items-center justify-between overflow-hidden bg-gray-100"
                 >
                     <SectionButton direction={Arrow.up} to="#about" />
                     <div className="h-5/6">
@@ -39,14 +40,14 @@ function App() {
                 </section>
                 <section
                     id="contact"
-                    className="flex h-screen snap-start flex-col items-center justify-between bg-gray-200"
+                    className="flex h-full snap-start flex-col items-center justify-between bg-gray-200"
                 >
                     <SectionButton direction={Arrow.up} to="#projects" />
                     <Contact />
                     <Footer />
                 </section>
             </div>
-        </>
+        </div>
     );
 }
 
